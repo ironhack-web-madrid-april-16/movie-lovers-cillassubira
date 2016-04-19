@@ -1,0 +1,9 @@
+<h4>Which movie was released in <%= @correct_year %>?</h4>
+<% @search_result.each do |movie| %>
+<tr>
+  <td><%= movie.title.split(" (").first %></td><br><td><img src="<%= movie.poster %>" alt="<%= movie.title %>" height="268" width="182"></td><br>
+    <form action="/answer/<%= movie.year %>" method="POST">
+    <button type='submit' >Correct Answer!</button><br>
+    </form>
+  </tr>
+<% end %>
